@@ -6,13 +6,14 @@ pip install -r requirements.txt
 python server.py
 ```
 
-[官方学习文档](https://www.osgeo.cn/tornado/index.html)
+## 学习文档
 
++ [tornado](https://www.osgeo.cn/tornado/index.html)
++ [peewee](http://docs.peewee-orm.com/en/latest/index.html)
+    
 ## 项目结构
 ### tornado项目实践方案
 其中包括：应用url路由分发、cx_Oracle再封装和引入、sqlalchemy ORM引入、loging配置引入、restful风格编写示例
-
-有参考：[github地址](https://github.com/baqmxdsny/tornado_demo)
 
 ```
 │  README.md                      # 项目说明

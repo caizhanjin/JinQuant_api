@@ -6,18 +6,18 @@ import settings
 
 from urls import urls_patterns as url_handlers
 from tornado.options import options
-from sqlalchemy.orm import scoped_session, sessionmaker
+# from sqlalchemy.orm import scoped_session, sessionmaker
 
 
 class Application(tornado.web.Application):
     def __init__(self, handlers, **setting):
         tornado.web.Application.__init__(self, handlers, **setting)
         self.db = settings.ORACLE_ENGINE
-        self.db_orm = scoped_session(sessionmaker(
-            bind=settings.ORM_ENGINE,
-            autocommit=False, autoflush=True,
-            expire_on_commit=False
-        ))
+        # self.db_orm = scoped_session(sessionmaker(
+        #     bind=settings.ORM_ENGINE,
+        #     autocommit=False, autoflush=True,
+        #     expire_on_commit=False
+        # ))
 
 
 application = Application(url_handlers, **settings.settings)

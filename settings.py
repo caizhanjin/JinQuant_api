@@ -10,7 +10,7 @@ from configs import initialize_logging
 # 编码设置
 os.environ['NLS_LANG'] = 'SIMPLIFIED CHINESE_CHINA.UTF8'
 
-define("port", default=8001, help="Run server on a specific port", type=int)
+define("port", default=8000, help="Run server on a specific port", type=int)
 define("host", default="localhost", help="Run server on a specific host")
 
 ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -71,4 +71,4 @@ ORM_URL = 'oracle://{}:{}@{}:{}/?service_name={}'.format(
     DB_ORACLE['PORT'],
     DB_ORACLE['NAME']
 )
-ORM_ENGINE = create_engine(ORM_URL, echo=True)
+# ORM_ENGINE = create_engine(ORM_URL, echo=True)
