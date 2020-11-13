@@ -9,7 +9,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class BaseWebsocketHandler(tornado.websocket.WebSocketHandler, ABC):
+class BaseWebsocketHandler(tornado.websocket.WebSocketHandler):
     """
     websocket基类，添加远端过滤
     """
@@ -33,7 +33,29 @@ class NoResultError(Exception):
     pass
 
 
-class BaseHandler(tornado.web.RequestHandler, ABC):
+class BaseHandler(tornado.web.RequestHandler):
+    """
+    输出：set_status/write/finish/redirect/write_error
+    """
+
+    def initialize(self):
+        """
+        用于初始化handler类过程的方法
+        """
+        pass
+
+    def prepare(self):
+        """
+        用于真正调用处理之前的初始化方法
+        如：打印日志，打开文件
+        """
+        pass
+
+    def on_finish(self):
+        """
+        如：关闭句柄，清理内存
+        """
+        pass
 
     def load_json(self):
         """Load JSON from the request body and store them in

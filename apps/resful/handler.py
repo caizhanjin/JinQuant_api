@@ -6,7 +6,7 @@ from apps.resful.model import UserModel
 from apps.base.base_handler import BaseHandler
 
 
-class UserListHandler(tornado.web.RequestHandler, ABC):
+class UserListHandler(tornado.web.RequestHandler):
 
     def get(self):
         users = UserModel.get_all()
@@ -22,7 +22,7 @@ class UserListHandler(tornado.web.RequestHandler, ABC):
         self.write(json_encode(resp))
 
 
-class UserHandler(BaseHandler, ABC):
+class UserHandler(BaseHandler):
 
     def get(self, user_id):
         try:
