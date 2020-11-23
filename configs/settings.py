@@ -11,7 +11,7 @@ ROOT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 # 编码设置
 os.environ["NLS_LANG"] = "SIMPLIFIED CHINESE_CHINA.UTF8"
 
-# 定义一些在命令行中传递的参数和类型，
+# 定义一些在命令行中传递的参数和类型
 # 启动项目示例：python server.py --config="test"
 define("config", default="test", help="Which environ config?")
 define("port", default=8000, help="Run server on a specific port", type=int)
